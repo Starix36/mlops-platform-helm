@@ -1,0 +1,25 @@
+replicaCount: 1
+image:
+  repository: my-ml-api # To be overridden
+  pullPolicy: IfNotPresent
+  tag: "latest"
+environment: "dev"
+apiPort: 8000
+
+# Nice to have: Secrets
+secrets: {}
+
+# Nice to have: Auto Scaling
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi

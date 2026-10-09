@@ -1,0 +1,6 @@
+apiVersion: v2
+name: generic-ml-api
+description: A generic Helm chart for deploying ML APIs across environments
+type: application
+version: 0.1.0
+appVersion: "1.0"

@@ -1,0 +1,15 @@
+environment: "production"
+replicaCount: 3
+image:
+  repository: ghcr.io/yourusername/my-ml-api
+  tag: "v1.0.0"
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+secrets:
+  API_KEY: "prod-secret-key-placeholder" # In reality, managed via Vault/SOPS
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
